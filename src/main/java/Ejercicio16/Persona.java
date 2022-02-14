@@ -26,7 +26,7 @@ public class Persona {
         this.edad=edad;
         this.peso=0;
         this.altura=0;
-        this.sexo=sexo;
+        this.sexo=comprobarSexo(sexo);
         setDNI(generarDNI());
     }
 
@@ -35,7 +35,7 @@ public class Persona {
         this.edad=edad;
         this.peso=peso;
         this.altura=altura;
-        this.sexo=sexo;
+        this.sexo=comprobarSexo(sexo);
         setDNI(generarDNI());
     }
 

@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class Ejercicio11 {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         String frase = "";
         InputStreamReader in = new InputStreamReader(System.in);
         BufferedReader buffer = new BufferedReader(in);

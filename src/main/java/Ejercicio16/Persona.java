@@ -1,5 +1,7 @@
 package Ejercicio16;
 
+import java.util.Random;
+
 public class Persona {
     String nombre;
     int edad;
@@ -16,6 +18,7 @@ public class Persona {
         this.peso=0;
         this.altura=0;
         this.sexo='H';
+        setDNI(generarDNI());
     }
 
     public Persona(String nombre, int edad, char sexo){
@@ -24,6 +27,7 @@ public class Persona {
         this.peso=0;
         this.altura=0;
         this.sexo=sexo;
+        setDNI(generarDNI());
     }
 
     public Persona(String nombre, int edad, char sexo, float peso, float altura){
@@ -32,6 +36,7 @@ public class Persona {
         this.peso=peso;
         this.altura=altura;
         this.sexo=sexo;
+        setDNI(generarDNI());
     }
 
     //GETTERS --------------------------------------
@@ -95,7 +100,14 @@ public void setEdad(int edad){
     }
 
     public String generarDNI(){
-        String dni="";
+        String dni ="";
+        Random r = new Random();
+        //Generacion numero ocho cifras random
+        int numbers = 10000000 + (int)(r.nextFloat() * 899900);
+        dni += String.valueOf(numbers);
+        //Generacion letra random para dni
+        char c = (char)(r.nextInt(26) + 'a');
+        dni = dni+c;
         return dni;
     }
 
@@ -113,7 +125,21 @@ public void setEdad(int edad){
     }
 
     public String toString(){
-        String persona ="";
+        String persona="Nombre: ";
+        persona = persona.concat(this.nombre);
+        String peso = String.valueOf(this.peso);
+        persona= persona+" Peso: ";
+        persona = persona.concat(peso);
+        String altura = String.valueOf(this.altura);
+        persona = persona+" Altura: ";
+        persona = persona.concat(altura);
+        String edad = String.valueOf(this.edad);
+        persona = persona+" Edad: ";
+        persona = persona.concat(edad);
+        persona = persona+" DNI: ";
+        persona = persona.concat(this.DNI);
+        persona = persona+" Sexo: ";
+        persona = persona+this.sexo;
         return persona;
     }
 
